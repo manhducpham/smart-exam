@@ -29,8 +29,6 @@
                 </li>
                 <li class="show">SINH VIÊN
                     <ul class="submenu">
-                        <li><a href="#" class="n1" target="iframe">Bộ đề luyện tập</a></li>
-                        <li><a href="#" class="n1" target="iframe">Luyện tập</a></li>
                         <li><a href="{{ url_for('exam_student_info', user_id = user.id) }}" class="n1" target="iframe">Làm bài thi</a></li>
                         <li><a href="{{ url_for('score_print', user_id = user.id) }}" class="n1" target="iframe">Xem điểm thi</a></li>
                     </ul>
