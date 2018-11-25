@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="stylesheet" href="../static/index.css"> -->
+    <title>QUESTION BANK</title>
+</head>
+<body>
+    
+        <div id = "qbank">
+                Mã bộ đề: {{ qbank_code }} <br>
+                <form action="" class="container_center" method="POST">
+                    Mức độ câu hỏi: <br> <br>
+                    <input type="radio" name="question_type" id="Dễ" value="Dễ" required> Dễ <br>
+                    <input type="radio" name="question_type" id="Trung bình" value="Trung bình" required> Trung bình<br>
+                    <input type="radio" name="question_type" id="Khó" value="Khó" required> Khó<br> <br>
+                    Câu hỏi: <br>
+                    {{ error }} <br>
+                    <textarea name='question' rows="4" cols="50" required=""></textarea> <br> <br>
+                    <div id="choice_wrapper">
+                        Đáp án A: 
+                        <input class="input_choice" name="optiona" placeholder="Đáp án A"type="text" required=""> <br>
+                        Đáp án B: 
+                        <input class="input_choice" name="optionb" placeholder="Đáp án B" type="text" required=""> <br>
+                        Đáp án C: 
+                        <input class="input_choice" name="optionc" placeholder="Đáp án C" type="text" required=""> <br>
+                        Đáp án D: 
+                        <input class="input_choice" name="optiond" placeholder="Đáp án D" type="text" required=""> <br> <br>             
+                        Đáp án đúng: 
+                        <select  name='right_answer'>
+                          <option value="A">A</option>
+                          <option value="B">B</option>
+                          <option value="C">C</option>
+                          <option value="D">D</option>
+                        </select> <br><br>
+                    </div>
+                    <button id="btn_submit_poll">Câu hỏi tiếp theo</button><br> <br>
+                    <button>
+                        <a href="{{ url_for('save_qbank', user_id = user_id, qbank_code = qbank_code)}}">Lưu bộ đề</a>
+                    </button>            
+                </form>
+            </div>
+</body>
+</html>

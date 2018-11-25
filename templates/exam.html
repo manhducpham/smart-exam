@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" class="exam" method="POST">
+        {% for  question in my_random_question %}
+            <h4>Question: {{ question.question }}</h4>
+            <h5>Description : {{question.description}}</h5>
+            <input type="radio" name="{{question.code}}" id="a" value="a" required> A: {{ question.a }} <br>
+            <input type="radio" name="{{question.code}}" id="b" value="b" required> B: {{ question.b }} <br>
+            <input type="radio" name="{{question.code}}" id="c" value="c" required> C: {{ question.c }} <br>
+            <input type="radio" name="{{question.code}}" id="d" value="d" required> D: {{ question.d }} <br>
+        {% endfor %}
+        <br>
+        <button>Submit</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../static/index.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> -->
+    <title>Home</title>
+</head>
+<body>
+    <div id="root">
+        <div class="menu">
+            <ul class="mainMenu" >
+                <li class="show"><a href="{{url_for('welcome', user_id = user.id)}}" class="n1" target="#">HOME</a>
+                </li>
+                <li class="show">GIẢNG VIÊN                 
+                    <ul class="submenu">
+                        <li><a href="{{url_for('qbanks', user_id = user.id)}}" id="myBtn" class="n1" target="iframe">Bộ đề</a>
+                        </li>
+                        <li><a href="{{url_for('scores_export', user_id = user.id)}}" id="myBtn2" class="n1" target="iframe">Trích xuất điểm</a>
+                        </li>
+                        <li><a href="{{url_for('exam_print', user_id = user.id)}}" id="myBtn3" class="n1" target="iframe">In bài thi</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="show">SINH VIÊN
+                    <ul class="submenu">
+                        <li><a href="#" class="n1" target="iframe">Bộ đề luyện tập</a></li>
+                        <li><a href="#" class="n1" target="iframe">Luyện tập</a></li>
+                        <li><a href="{{ url_for('exam_student_info', user_id = user.id) }}" class="n1" target="iframe">Làm bài thi</a></li>
+                        <li><a href="{{ url_for('score_print', user_id = user.id) }}" class="n1" target="iframe">Xem điểm thi</a></li>
+                    </ul>
+                </li>
+                <li class="show">TÀI KHOẢN
+                        <ul class="submenu">
+                            <li class="n1"><h3>{{ user.full_name }}</h3></li>
+                            <li class="n1"><h3>{{ user.email }}</h3></li>
+                            <li class="n1">
+                              <a href="{{url_for('login')}}" class="n1">Đăng xuất</a>
+                            </li>
+                        </ul>
+                    </li>
+            </ul>
+        </div>
+        <div class="menu2">
+            
+            <iframe height="100%" width="100%" name="iframe"></iframe>
+           
+        </div>
+    </div>
+    
+</body>
+
+</html>

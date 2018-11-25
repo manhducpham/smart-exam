@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IN BÀI THI</title>
+</head>
+<body>
+    <div>
+        <form action="" method="POST">
+            <h4>Mã giảng viên</h4>
+            <br>
+            <input type="password" name = 'teacher_id'>
+            <br>
+            <h4>Mã số sinh viên</h4>
+            <br>
+            <input type="text" name = 'student_id'> 
+            <br>
+            <h4>Mã lớp</h4>
+            <br>
+            <input type="text" name = 'class_id'>
+            <br>
+            <button>In</button>
+        </form>
+        Đề thi:
+        <br>
+        {% for exam_questions in exams_questions %}
+            {% for q in exam_questions %}
+                Câu hỏi: {{ q.question}} <br>
+                Đáp án A: {{ q.optiona }} <br>
+                Đáp án B: {{ q.optionb }} <br>
+                Đáp án C: {{ q.optionc }} <br>
+                Đáp án D: {{ q.optiond }} <br>
+                Đáp án đúng: {{q.right_answer}} <br>
+            {% endfor %}
+            <br>
+        {% endfor %}
+        <br>
+        Bài làm của sinh viên:
+        <br>
+        {% for answer in answers %}
+            {% for a in answer %}
+                {{ a }} <br>
+            {% endfor %}
+            <br>
+        {% endfor %}
+        <br>
+    </div>
+</body>
+</html>

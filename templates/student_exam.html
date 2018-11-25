@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../static/student_exam.css">    
+    <title>Student Exam</title>
+</head>
+<body>
+    <h1 align="center">Mời các bạn làm bài thi, chúc các bạn làm bài tốt</h1>
+    <h2 align="center">Thời gian: {{ time }}  phút</h2>
+    <h2 align="center">Đã hết: <span id="time"><time>00:00:00</time></span>  phút</h2>
+    <h3 align="center">Đề bài</h3> <br><br> <br>
+    <form action="" method = "POST">
+        {% for q in exam_questions %}
+            <br>Câu số {{ exam_questions.index(q) + 1}}
+            <br>Câu hỏi: {{ q.question}}
+            <br>Đáp án A: <input type="radio" name="{{exam_questions.index(q) + 1}}" id="a" value="a" required> {{ q.optiona }}
+            <br>Đáp án B: <input type="radio" name="{{exam_questions.index(q) + 1}}" id="b" value="b" required> {{ q.optionb }}
+            <br>Đáp án C: <input type="radio" name="{{exam_questions.index(q) + 1}}" id="c" value="c" required> {{ q.optionc }}
+            <br>Đáp án D: <input type="radio" name="{{exam_questions.index(q) + 1}}" id="d" value="d" required> {{ q.optiond }}
+        <br>    
+        {% endfor %}
+        <br>
+        <button>Nộp bài</button>
+    </form>
+    <script src="../static/student_exam.js"></script>
+</body>
+</html>
+
+#student_exam.js
+
+var h1 = document.getElementsByTagName('span')[0],
+    start = document.getElementById('start'),
+    stop = document.getElementById('stop'),
+    clear = document.getElementById('clear'),
+    seconds = 0, minutes = 0, hours = 0,
+    t;
+function add() {
+    seconds++;
+    if (seconds >= 60) {
+        seconds = 0;
+        minutes++;
+        if (minutes >= 60) {
+            minutes = 0;
+            hours++;
+        }
+    }   
+    h1.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+    timer();
+}
+function timer() {
+    t = setTimeout(add, 1000);
+}
+timer();
+timer;

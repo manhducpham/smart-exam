@@ -1,0 +1,15 @@
+html, body {
+    height: 100%;
+}
+* {
+    font-size: 1.1rem;
+}
+#root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.info {
+    align-items: center;
+    justify-content: center;
+}

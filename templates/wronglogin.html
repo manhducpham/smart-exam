@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../static/login.css">
+    <title>Smart Exam Online</title>
+</head>
+<body>
+    <form action="" class="login" method="POST">
+        <div id="root">
+            <h4>Mời các bạn đăng nhập để sử dụng</h4>
+            <br>
+            <h5>{{ error }}</h5>
+            <br>
+            Username: <br>
+            <input type="text" name="user_id" size="25" required="">
+            <br>
+            Password: <br>
+            <input type="password" name="password" size="25" required=""> <br>
+            <br>
+            <button>Login</button>
+            <button>
+                <a href="/signup">Sign Up</a>
+            </button>
+        </div>
+    </form>
+</body>
+</html>

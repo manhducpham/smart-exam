@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../static/index.css">
+    <title>ADD QUESTIONS</title>
+</head>
+<body>
+    
+        <div id = "qbank">
+                Question bank code: {{ qbank.qbank_code }}<br> 
+                <form action="" class="container_center" method="POST">
+                    Số lượng câu hỏi mức độ dễ thêm mới: <input type="number" name='add_n_easy'><br>  
+                    Số lượng câu hỏi mức độ trung bình thêm mới: <input type="number" name='add_n_medium'><br>  
+                    Số lượng câu hỏi mức độ khó thêm mới: <input type="number" name='add_n_hard'><br>  
+                    <button id="btn_submit_poll">Add questions</button>     
+                </form>
+            </div>
+</body>
+</html>

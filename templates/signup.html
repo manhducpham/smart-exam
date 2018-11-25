@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../static/signup.css">
+    <title>Đăng ký tài khoản</title>
+</head>
+<body>
+    <form class="signup" method="POST">
+        <label for="">Tên đăng nhập</label> <br>
+        <input type="text" pattern="[a-z0-9]{8,25}" title = "ID dài từ 8 - 25 ký tự, không chấp nhận các ký tự đặc biệt như ' ', '?'..." name = 'user_id' size="25" required=""> {{ error }}<br>
+        <label for="">Họ và tên</label> <br>
+        <input type="text" name = 'full_name' size="25" required=""> <br>
+        <label for="">Email</label> <br>
+        <input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Email phải có định dạng email@gmail.com" name = 'email' size="25" required=""> <br>
+        <label for="">Mật khẩu</label> <br>
+        <input type="password" title="Mật khẩu có ít nhất 1 kí tự viết hoa, 1 ký tự viết thường, 1 con số, không có các ký tự đặc biệt" name = 'password' size="25" required=""> <br> <br>
+        <button>Xác minh tài khoản</button>
+    </form>
+</body>
+</html>

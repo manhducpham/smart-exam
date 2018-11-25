@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button>
+            <a href="{{url_for('add_question', user_id = user.id, qbank_code = qbank.qbank_code)}}">
+                Thêm câu hỏi mới
+            </a>
+        </button><br>
+        {% for question in qbank.qbank_easy %}
+        Câu hỏi: {{ question.question }} <br>
+        Mức độ: {{ question.question_type }} <br>
+        Đáp án a: {{ question.optiona }} <br>
+        Đáp án b: {{ question.optionb }} <br>
+        Đáp án c: {{ question.optionc }} <br>
+        Đáp án d: {{ question.optiond }} <br>
+        Đáp án đúng: {{ question.right_answer }} <br>
+        <button>
+            <a href="{{url_for('update_question', user_id = user.id, qbank_code = qbank.qbank_code, question_id = question.id)}}">
+                Cập nhật
+            </a>
+        </button>
+        <br>
+        <button>
+            <a href="{{url_for('del_question', user_id = user.id, qbank_code = qbank.qbank_code, question_id = question.id)}}">
+                xóa
+            </a>
+        </button>
+        <br>
+        {% endfor %}
+        <br>
+        {% for question in qbank.qbank_medium %}
+        Câu hỏi: {{ question.question }} <br>
+        Mức độ: {{ question.question_type }} <br>
+        Đáp án a: {{ question.optiona }} <br>
+        Đáp án b: {{ question.optionb }} <br>
+        Đáp án c: {{ question.optionc }} <br>
+        Đáp án d: {{ question.optiond }} <br>
+        Đáp án đúng: {{ question.right_answer }} <br>
+        <button>
+            <a href="{{url_for('update_question', user_id = user.id, qbank_code = qbank.qbank_code, question_id = question.id)}}">
+                Cập nhật
+            </a>
+        </button>
+        <br>
+        <button>
+            <a href="{{url_for('del_question', user_id = user.id, qbank_code = qbank.qbank_code, question_id = question.id)}}">
+                xóa
+            </a>
+        </button>
+        <br>
+        {% endfor %}
+        <br>
+        {% for question in qbank.qbank_hard %}
+        Câu hỏi: {{ question.question }} <br>
+        Mức độ: {{ question.question_type }} <br>
+        Đáp án a: {{ question.optiona }} <br>
+        Đáp án b: {{ question.optionb }} <br>
+        Đáp án c: {{ question.optionc }} <br>
+        Đáp án d: {{ question.optiond }} <br>
+        Đáp án đúng: {{ question.right_answer }} <br>
+        <button>
+            <a href="{{url_for('update_question', user_id = user.id, qbank_code = qbank.qbank_code, question_id = question.id)}}">
+                Cập nhật
+            </a>
+        </button>
+        <br>
+        <button>
+            <a href="{{url_for('del_question', user_id = user.id, qbank_code = qbank.qbank_code, question_id = question.id)}}">
+                Xóa
+            </a>
+        </button>
+        <br>
+        {% endfor %}
+        <br>
+    </div>
+</body>
+</html>

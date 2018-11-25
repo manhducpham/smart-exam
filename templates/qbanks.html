@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Question Banks</title>
+</head>
+<body>
+    {% for qbank in qbanks %}
+        <h3>Mã bộ đề: {{ qbank.qbank_code }}</h3>
+        <button>
+            <a href="{{url_for('update_qbank', qbank_code = qbank.qbank_code, user_id = user.id)}}">
+                Cập nhật
+            </a>
+        </button>
+        <button>
+            <a href="{{ url_for('delete_qbank', qbank_code = qbank.qbank_code, user_id = user.id)}}">
+                Xóa
+            </a>
+        </button>
+        <br>
+    {% endfor %}
+    <br>
+    <button>
+        <a href="{{url_for('create_qbank', user_id = user.id )}}">Tạo bộ đề mới</a>
+    </button>
+    <br>
+</body>
+</html>
