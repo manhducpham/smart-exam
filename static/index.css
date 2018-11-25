@@ -21,6 +21,11 @@ html,body{
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
+
+#btn_signup > a {
+    text-decoration: none;
+    color: #ffffff;
+}
 /* Modal Content */
 .modal-content {
     background-color:brown;
