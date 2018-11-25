@@ -2,8 +2,6 @@
 # Flask
 # ----------------------
 flask
-flask-restful
-flask-socketio
 
 # ----------------------
 # Database
