@@ -2,8 +2,6 @@
 # Flask
 # ----------------------
 flask
-flask-restful
-flask-socketio
 
 # ----------------------
 # Database
@@ -19,5 +17,3 @@ gunicorn
 # ----------------------
 # Others
 # ----------------------
-addict
-shortuuid
